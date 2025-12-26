@@ -19,6 +19,11 @@ public class User {
   int age;
   
   /**
+   * default constructor for user.
+   */
+  public User() {}
+  
+  /**
    *contructor for user class.
    *
    */
