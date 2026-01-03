@@ -4,16 +4,12 @@ import gymmembership.Customer;
 import org.springframework.data.repository.CrudRepository;
 
 
+
 /**
- * class for customer repository.
+ * class for Customer Repository.
  */
-
-public class CustomerRepo {
-  /**
-   * class implementing CRUD.
-   */
-  public interface GradeRepository extends CrudRepository<Customer, Long> {
-
-  }
+public interface CustomerRepo extends CrudRepository<Customer, Long> {
 
 }
+
+
