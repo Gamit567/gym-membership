@@ -12,11 +12,11 @@ import jakarta.persistence.Id;
 public class User {
   @Id
   @GeneratedValue
-  Long id;
-  String name;
-  String surname;
-  String email;
-  int age;
+  private Long id;
+  private String name;
+  private String surname;
+  private String email;
+  private int age;
   
   /**
    * default constructor for user.

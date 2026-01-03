@@ -1,5 +1,6 @@
 package gymmembership;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -8,34 +9,47 @@ import jakarta.persistence.OneToOne;
 /**
  * class for Customer.
  */
+@Entity
 public class Customer {
   @Id
   @GeneratedValue
-  Long id;
-  boolean status;
-  String membershiptype;
+  private Long id;
+  private boolean status;
+  private String membershiptype;
   @OneToOne
   @JoinColumn(name = "user_id")
-  User user;
+  private User user;
 
-  Long getId() {
+  public Long getId() {
     return id;
   }
   
-  boolean getStatus() {
+  public boolean getStatus() {
     return status;
   }
   
-  String membershiptypes() {
+  /**
+   *return membership types .
+   *
+   * @return types.
+   */
+  
+  public String membershiptypes() {
     return membershiptype;
   }
   
   
-  void setStatus(boolean finish) {
+  public void setStatus(boolean finish) {
     status = finish;
   }
 
-  void setmembershipType(String types) {
+  /**
+   * set types. 
+   *
+   */
+  public void setmembershipType(String types) {
     membershiptype = types;
   }
+  
+
 }
