@@ -52,6 +52,11 @@ public class Customer {
   public void setMembershipType(String types) {
     membershiptype = types;
   }
+
+  public void setUser(User user2) {
+    this.user = user;
+    
+  }
   
 
 }
