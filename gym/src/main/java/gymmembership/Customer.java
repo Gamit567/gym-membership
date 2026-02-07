@@ -19,6 +19,8 @@ public class Customer {
   @OneToOne
   @JoinColumn(name = "user_id")
   private User user;
+  @OneToOne(mappedBy = "user")
+  private Customer customer;
 
   public Long getId() {
     return id;
@@ -34,7 +36,7 @@ public class Customer {
    * @return types.
    */
   
-  public String membershiptypes() {
+  public String getMembershipType() {
     return membershiptype;
   }
   
@@ -47,7 +49,7 @@ public class Customer {
    * set types. 
    *
    */
-  public void setmembershipType(String types) {
+  public void setMembershipType(String types) {
     membershiptype = types;
   }
   
