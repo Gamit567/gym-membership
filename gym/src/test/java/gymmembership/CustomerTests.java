@@ -15,9 +15,9 @@ public class CustomerTests {
   public void tests() {
     Customer customer = new Customer();
     customer.setStatus(false);
-    customer.setmembershipType("basic");
+    customer.setMembershipType("basic");
     
     assertEquals(customer.getStatus(), false);
-    assertEquals(customer.membershiptypes(), "basic");
+    assertEquals(customer.getMembershipType(), "basic");
   }
 }
