@@ -36,14 +36,16 @@ public class CustomerController {
    * @return http status.
    */
   
-  @PostMapping(value = "/grades/addGrade")
+  @PostMapping(value = "/add")
   public ResponseEntity<Customer> addCustomer(@RequestBody Map<String, String> params) {
     User user =
-        userrepository.findById(Long.valueOf(params.get("student_id"))).orElseThrow();
+        userrepository.findById(Long.valueOf(params.get("user_id"))).orElseThrow();
    
     Customer customer = new Customer();
+    customer.setUser(user);
     customer.setStatus(true);
     customer.setMembershipType("basic");
+    Customer saved = customerrepo.save(customer);
   
     return ResponseEntity.ok(customer);
   }

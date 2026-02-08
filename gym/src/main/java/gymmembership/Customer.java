@@ -19,8 +19,6 @@ public class Customer {
   @OneToOne
   @JoinColumn(name = "user_id")
   private User user;
-  @OneToOne(mappedBy = "user")
-  private Customer customer;
 
   public Long getId() {
     return id;
