@@ -1,5 +1,7 @@
 package com.gym.membership.model;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -20,12 +22,18 @@ public class Memberships {
 	@JoinColumn(name = "customer_id")
 	private Customer customer;
 	
+	private LocalDate startDate;
+	private LocalDate endDate;
+	
 	private int durations = 30;
+	
+	
+	private MembershipStatus status;
 	
 	
 	public Memberships() {
 		this.membership = MembershipEnum.NONE;
-		
+		this.setStatus(MembershipStatus.NONE);
 	}	
 
 	public int getCode() {
@@ -58,6 +66,30 @@ public class Memberships {
 
 	public void setDurations(int durations) {
 		this.durations = durations;
+	}
+
+	public MembershipStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(MembershipStatus status) {
+		this.status = status;
+	}
+
+	public LocalDate getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(LocalDate startDate) {
+		this.startDate = startDate;
+	}
+
+	public LocalDate getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(LocalDate endDate) {
+		this.endDate = endDate;
 	}
 
 }
