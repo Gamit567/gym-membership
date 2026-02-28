@@ -5,7 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 @Entity
-class customer{
+class Customer{
 
 	@Id
 	@GeneratedValue
@@ -15,9 +15,9 @@ class customer{
     
     private int age;
     
-    public customer() {}
+    public Customer() {}
     
-    public customer(String name, int age) {
+    public Customer(String name, int age) {
     	this.name = name;
     	this.age = age;
     }

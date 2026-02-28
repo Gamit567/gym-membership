@@ -3,6 +3,8 @@ package com.gym.membership.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Memberships {
@@ -13,6 +15,12 @@ public class Memberships {
 	private int code;
 	
 	private MembershipEnum membership;
+	
+	@OneToOne
+	@JoinColumn(name="customer id")
+	private Customer customer;
+	
+	public Memberships() {}
 	
 	public Memberships(int code) {
 		this.code = code;
