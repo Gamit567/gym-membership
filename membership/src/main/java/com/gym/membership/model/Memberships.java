@@ -17,13 +17,13 @@ public class Memberships {
 	private MembershipEnum membership;
 	
 	@OneToOne
-	@JoinColumn(name="customer id")
+	@JoinColumn(name = "customer_id")
 	private Customer customer;
 	
-	public Memberships() {}
+	private int durations = 30;
 	
-	public Memberships(int code) {
-		this.code = code;
+	
+	public Memberships() {
 		this.membership = MembershipEnum.NONE;
 		
 	}	
@@ -42,6 +42,22 @@ public class Memberships {
 
 	public void setMembership(MembershipEnum membership) {
 		this.membership = membership;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
+	public int getDurations() {
+		return durations;
+	}
+
+	public void setDurations(int durations) {
+		this.durations = durations;
 	}
 
 }
