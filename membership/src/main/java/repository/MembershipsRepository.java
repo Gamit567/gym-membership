@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.gym.membership.model.Customer;
+import com.gym.membership.model.MembershipStatus;
 import com.gym.membership.model.Memberships;
 
 public interface MembershipsRepository  extends JpaRepository<Memberships,Long>{
@@ -14,5 +15,8 @@ public interface MembershipsRepository  extends JpaRepository<Memberships,Long>{
 	 Optional<Memberships> findByCode(int code);
 	
 	 Optional<Memberships> findByCustomer(Customer customer);
+	 
+	 Optional<Memberships> findByMembershipStatus(MembershipStatus status);
+	 
 
 }
